@@ -45,6 +45,10 @@ class StreamDeck extends EventEmitter {
 			this.emit('error', err);
 		});
 	}
+
+	write(data) {
+		this.streamDeck.write(data);
+	}
 }
 
 module.exports = new StreamDeck(new HID.HID(streamDecks[0].path));
